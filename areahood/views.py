@@ -3,6 +3,7 @@ from .models import Profile,Post,Neighbourhood
 from django.contrib.auth import authenticate,login
 from .forms import ProfileForm,PostForm
 from django.http import HttpResponse
+import datetime as dt
 # from django.contrib.sites.shortcuts import get_current_site
 # from django.utils.encoding import force_bytes, force_text
 # from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -29,7 +30,7 @@ def create_profile_view(request):
 #views to create posts
 def create_post_view(request):
     current_user = request.user
-    post = Project.objects.all()
+    post = Post.objects.all()
     if request.method == 'POST':
         post_form = PostForm(request.POST, request.FILES) 
         if post_form.is_valid():
@@ -45,7 +46,6 @@ def create_post_view(request):
 def display(request):
     images = Profile.objects.all() 
     photos = Post.objects.all() 
-    myDate = datetime.now()
-    return render (request,'display.html',{"photos":photos,"images":images,"date":myDate}) 
+    return render (request,'home.html',{"photos":photos,"images":images}) 
 
 

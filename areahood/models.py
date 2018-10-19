@@ -92,12 +92,12 @@ class Profile(models.Model):
 
 class Post(models.Model):
     image = models.ImageField(upload_to = 'images/',null=True)  
-    image_name = models.CharField(max_length = 30)
-    image_caption = models.CharField(max_length = 40,blank=True)
+    post = models.CharField(max_length = 30)
+    post_description = models.CharField(max_length = 40,blank=True)
     profile = models.ForeignKey(Profile,null=True)
     user = models.ForeignKey(User,null=True)
     posted_time = models.DateTimeField(auto_now_add=True,null=True)
-    url = models.URLField(max_length = 80,null=True)
+    link = models.URLField(max_length = 80,null=True)
 
     class Meta:
         ordering = ['-id']

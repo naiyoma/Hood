@@ -24,10 +24,29 @@
             {% bootstrap_form form layout='inline'%}
             <input type="submit" class="btn btn-sucess btn-lg" value="Post">           
         </form>
+        <hr >
+        <a href="{%url 'post'%}">Post a project</a>
+     <hr>
         </div>
     </div>
     </div>
-    <img src="{{image.image.url}}" style="width: 50%;" alt="">
+    {% for photos_item in post %}
+
+    <div class="container">
+    <div style="text-align:center;" class="row" id="profilerow">
+        <div class="col-md-6">
+            <div id="imagecard">
+        <img float="center" class="" src="{{photos_item.image.url}}" alt="Card image cap" style="width: 50%; top: 150px;">
+        <div class="card-body">
+      <p>{{photos_item.post}}</p>
+     <p>{{photos_item.link}}</p>
+     <p>{{photos_item.post_description}}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
 </div>

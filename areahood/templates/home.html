@@ -1,0 +1,29 @@
+{%extends 'registration/base.html'%}
+ % load bootstrap4 %} 
+{% load staticfiles %}
+{% block content %} 
+{{block.super}}
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+<body>
+
+        {% for item in photos %}
+            <img class="img-responsive" src="{{item.image.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>
+   
+                    {% if item.profile.profile_image %}
+                       <img src="{{item.profile.profile_image.url}}" alt="" style="width: 60px; height: 60px; border-radius:70%;possition:relative;float:left;">
+                       <p>neighbourhood:{{item.profile.neighbourhood}}</p>
+                       <p>Location:{{item.profile.location}}</p>
+                       <p>Username:{{item.user.profile.username}}</p>
+                       {% endif %} 
+        {% endfor %}
+
+</body>
+   
+
+{% endblock %}
