@@ -40,7 +40,7 @@ def create_post_view(request):
         return redirect('display')
     else:        
         post_form =PostForm() 
-    return render(request,'prof.html',{"post_form":post_form})
+    return render(request,'post.html',{"post_form":post_form})
 #views to display posts
 def display(request):
     images = Profile.objects.all() 
