@@ -1,0 +1,47 @@
+{% extends 'registration/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<h1>profile page</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% if request.user.profile.profile_image  %}
+                <img src="{{request.user.profile.profile_image.url}}" class="img-responsive" alt="Image" height="250" width="250" style="border-radius: 50%;" >
+                <div class="card">
+                {{request.user.profile.username}}
+                {% else %}
+              {% endif %}
+            </div>
+            </div>
+        <div class="col-md-6">
+        <form action="{%url 'profile' %}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {% bootstrap_form form layout='inline'%}
+            <input type="submit" class="btn btn-sucess btn-lg" value="Post">           
+        </form>
+        </div>
+    </div>
+    </div>
+    <img src="{{image.image.url}}" style="width: 50%;" alt="">
+</div>
+<div class="container">
+{% for photos_item in image %}
+<p>{{ photos_item.image_caption | truncatechars:100 }}</p>
+<div class="card">
+<img class="" src="{{photos_item.image.url}}" style="width:500px; height: 500px">
+</div>
+<p>Posted {{photos_item.posted_time|timesince}} ago</p>
+{% endfor %}
+<h5><img   class="img-circle" src="{{user.profiles_item.profile.profile_pic.url}}" > {{request.user}}</h5> 
+{% for profiles_item in profiles %}
+        <h5><img src="{{profiles_item.profile.profile_pic.url}}"> {{profiles_item.profile.first_name}}</h5> 
+        <button class="btn btn-primary btn-sm">Follow</button>
+{% endfor %}
+{% endblock %}
+</div>
+</div>
+
+
+
