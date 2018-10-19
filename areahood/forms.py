@@ -8,4 +8,12 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model=Profile
         exclude = ['user']
-        fields = ['username','profile_image']
+        fields = ['username','profile_image','neighbourhood','location']
+
+class PostForm(forms.ModelForm):
+    image_name = forms.CharField(max_length = 30)
+
+    class Meta:
+        model = Post
+        fields = ['image_name','image','url','image_caption']
+

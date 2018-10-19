@@ -52,12 +52,20 @@ class Neighbourhood(models.Model):
         neighbourhood = cls.objects.get(id=neighbourhood_id)
         return neighbourhood
 
+class Location(models.Model):
+    location = models.CharField(max_length= 30)
+    
+    def __str__(self):
+        return self.location
+
+
 class Profile(models.Model):
     username = models.CharField(max_length = 30)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile',null=True)
     profile_image = models.ImageField(upload_to = 'images/')
     email = models.EmailField(max_length=70,blank=True)
     neighbourhood = models.ForeignKey(Neighbourhood,null=True)
+    location = models.ForeignKey(Location,null=True)
     
     def __str__(self):
         return self.username
