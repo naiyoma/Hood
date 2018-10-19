@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile,Post,User
+from .models import Profile,Post,User,Business
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -18,10 +18,10 @@ class PostForm(forms.ModelForm):
         fields = ['post','image','link','post_description']
 
 class BusinessForm(forms.ModelForm):
-    name = forms.CharField(max_length = 30)
+    business_name = forms.CharField(max_length = 30)
 
     class Meta:
-        model = Post
-        fields = ['name','product','description']
+        model = Business
+        fields = ['business_name','product','business_email']
 
 

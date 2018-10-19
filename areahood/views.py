@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Profile,Post,Neighbourhood
+from .models import Profile,Post,Neighbourhood,Business
 from django.contrib.auth import authenticate,login
-from .forms import ProfileForm,PostForm
+from .forms import ProfileForm,PostForm,BusinessForm
 from django.http import HttpResponse
 import datetime as dt
 # from django.contrib.sites.shortcuts import get_current_site
@@ -49,19 +49,19 @@ def display(request):
     return render (request,'home.html',{"photos":photos,"images":images}) 
 
 #views to create business
-def create_business_view(request):
+def create_buisiness_view(request):
     current_user = request.user
     post = Post.objects.all()
     if request.method == 'POST':
         business_form = BusinessForm(request.POST, request.FILES) 
-        if post_form.is_valid():
+        if business_form.is_valid():
             business = business_form.save(commit=False)
             business.user = current_user
             business.profile = current_user.profile
             business.save()
         return redirect('business')
     else:      
-        post_form =PostForm() 
+        business_form =PostForm() 
     return render(request,'bzna.html',{"business_form":business_form})
 
 #views to display business

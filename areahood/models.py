@@ -129,6 +129,7 @@ class Business(models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood,null=True)
     user = models.ForeignKey(User,null=True)
     posted_time = models.DateTimeField(auto_now_add=True,null=True)
+    product = models.ImageField(upload_to = 'images/',null=True) 
    
     class Meta:
         ordering = ['-id']
