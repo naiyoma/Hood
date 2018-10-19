@@ -8,7 +8,8 @@ urlpatterns=[
     url(r'profile/$',views.create_profile_view,name='profile'),
     url(r'^$', views.display, name='display'),
     url(r'^post/$', views.create_post_view, name='post'),
-
+    url(r'^bzna/$', views.create_buisiness_view, name='bzna'),
+    url(r'^business/$', views.business, name='business'),    
 ]
 
 if settings.DEBUG:

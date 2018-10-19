@@ -48,4 +48,25 @@ def display(request):
     photos = Post.objects.all() 
     return render (request,'home.html',{"photos":photos,"images":images}) 
 
+#views to create business
+def create_business_view(request):
+    current_user = request.user
+    post = Post.objects.all()
+    if request.method == 'POST':
+        business_form = BusinessForm(request.POST, request.FILES) 
+        if post_form.is_valid():
+            business = business_form.save(commit=False)
+            business.user = current_user
+            business.profile = current_user.profile
+            business.save()
+        return redirect('business')
+    else:      
+        post_form =PostForm() 
+    return render(request,'bzna.html',{"business_form":business_form})
+
+#views to display business
+def business(request):
+    images = Profile.objects.all() 
+    business = Business.objects.all() 
+    return render (request,'business.html',{"business":business,"images":images}) 
 

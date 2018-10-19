@@ -121,7 +121,6 @@ class Post(models.Model):
     def __unicode__(self):
         return self.image_name
 
-
     
 class Business(models.Model):  
     business_name = models.CharField(max_length = 130)
@@ -131,7 +130,6 @@ class Business(models.Model):
     user = models.ForeignKey(User,null=True)
     posted_time = models.DateTimeField(auto_now_add=True,null=True)
    
-    
     class Meta:
         ordering = ['-id']
  
