@@ -1,5 +1,5 @@
 {%extends 'registration/base.html'%}
- % load bootstrap4 %} 
+{% load bootstrap4 %} 
 {% load staticfiles %}
 {% block content %} 
 {{block.super}}
@@ -12,14 +12,36 @@
         crossorigin="anonymous">
 <body>
         <div class="row" id="row1">
-                
+
+    <div id="mySidenav" class="sidenav">
+                English
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <hr>
+              <a href="/accounts/login">Login</a>
+              <hr>
+              <a href='/'>Home</a>
+              <hr>
+              <a href='/about'>About Us</a>
+              <hr>
+              <a href='profile/'>View Profile</a>
+              <hr>
+              <a href="#">Confrence</a>
+              <p style="color:grey;">New york/15-16 November 2018</p>
+              <p style="color: #818181;">Amsterdam / 14-15 February 2019</p>
+            </div>
+            <div id="main">
+              <span style="font-size:20px;cursor:pointer;color:white;" onclick="openNav()">&#9776; menu</span>
+            </div>
                 <hr style="background-color:white;">
                 <main>
                         <h1 class="neon pink" id="blink-soft" >Welcome</h1>
                         <h1 class="neon blue"id="blink-soft">To</h1>
                         <h1 class="neon green"id="blink-soft">Neighbourhood</h1>
                 </main>
-                <hr>    
+                <hr>
+                <h4 id="text1">Login</h4>
+                <p>......</p>
+                <h4 id="text1">Register</h4>    
         </div>
         <div class="row" id="row2">
                 <blockquote>
@@ -40,5 +62,18 @@
                        {% endif %} 
         {% endfor %}
 </body>
-
+<script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+                
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    document.body.style.backgroundColor = "white";
+                }
+                </script>
+                
 {% endblock %}
