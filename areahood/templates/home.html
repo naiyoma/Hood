@@ -21,15 +21,21 @@
                 <hr>    
         </div>
         <div class="row" id="row2">
-                <blockquote>
-                <p>The neighbourhood is a place<br>
-                of.. intrigue and emotional espionage,<br>
-                where when two people stop to talk on<br>
-                the street their tongues are like the two<br>
-                halves of a scissor coming together ,<br>
-                cutting reputations and good names to shred </p>
+                
+<figure class="quote">
+                <blockquote class="quote__body">
+                         <p id="quotetext">The neighbourhood is a place<br>
+              of.. intrigue and emotional espionage where when two people <br>
+        stop to talk onthe street their tongues are like the two
+         halves of a scissor<br> coming together cutting reputations and good names to shred </p>
                 </blockquote>
+                <figcaption class="quote__credits">Sherlock Holmes, <cite>Sign of Four</cite></figcaption>
+        </figure>
         </div>
+
+
+
+        
         {% for item in photos %}
             <img class="img-responsive" src="{{item.image.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>
    
