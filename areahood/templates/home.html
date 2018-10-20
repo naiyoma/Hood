@@ -14,11 +14,14 @@
         <div class="row" id="row1">
                 <hr style="background-color:white;">
                 <main>
-                        <h1 class="neon pink">Welcome</h1>
-                        <h1 class="neon blue">To</h1>
-                        <h1 class="neon green">Neighbourhood</h1>
+                        <h1 class="neon pink" id="blink-soft" >Welcome</h1>
+                        <h1 class="neon blue"id="blink-soft">To</h1>
+                        <h1 class="neon green"id="blink-soft">Neighbourhood</h1>
                 </main>
                 <hr>    
+        </div>
+        <div class="row" id="row2">
+                pppp
         </div>
         {% for item in photos %}
             <img class="img-responsive" src="{{item.image.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>

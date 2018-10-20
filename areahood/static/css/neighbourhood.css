@@ -16,7 +16,7 @@ h1{
 }
 @import url('https://fonts.googleapis.com/css?family=Londrina+Outline');
 body {
-    background: #000;
+   
     font-size: 16px;
 }
 .neon {
@@ -26,6 +26,8 @@ body {
     font-size: 3em;
     color: #fff;
     letter-spacing: 0.15em;
+    position: relative;
+    top: 100px;
 }
 
 .pink {
@@ -61,4 +63,20 @@ body {
         0 0 100px #7bffce,
         0 0 150px #7bffce;
 }
-
+#blink-soft {
+    animation: blinker 2.6s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  #row2{
+    background-image: url("https://png.pngtree.com/element_origin_min_pic/16/06/15/165761150d11e20.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
