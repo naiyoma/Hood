@@ -1,36 +1,211 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="/business">View Business</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <p><a href="{%url 'post'%}">Make a post</a></p>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+<nav class="navbar navbar-light" style="background-color: #F0FFF0;">
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: "Lato", sans-serif;
+        transition: background-color .5s;
+    }
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:#F4F7F6;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div id="mySidenav" class="sidenav">
+        English
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <hr>
+      <a href="/accounts/login">Login</a>
+      <hr>
+      <a href='/'>Home</a>
+      <hr>
+      <a href='/about'>About Us</a>
+      <hr>
+      <a href='profile/'>View Profile</a>
+      <hr>
+      <a href="#">Confrence</a>
+      <p style="color:grey;">New york/15-16 November 2018</p>
+      <p style="color: #818181;">Amsterdam / 14-15 February 2019</p>
     </div>
-  </nav>
+    
+    <div id="main">
+      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+    </div>
+    <div class="vl"></div>
+    <form id="demo-2" action="{% url 'search_results'%}" style="position: relative;right:27%;background-color: #F0FFF0;">
+        <input type="search" placeholder="Search" name="username">
+      </form>
+      <div class="row" style="position: relative; left:20%;top: 54px;">
+        <p><a href="/accounts/register">REGISTER</a></p>/<P><a href="/accounts/login">LOGIN</a></P>
+        </div>
+        <div class="vl2"></div>
+        <strong><p><a href="{%url 'insta-images'%}"> Submit Project</a></p></strong>
+    
+       
+      </body>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+        document.body.style.backgroundColor = "white";
+    }
+    </script>
+      
+    </body>
+    </html> 
+    
+    </nav>
+    <style>
+    
+    a {
+      color: #69C;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #F60;
+    }
+    h1 {
+      font: 1.7em;
+      line-height: 110%;
+      color: #000;
+    }
+    p {
+      margin: 0 0 20px;
+    }
+    
+    
+    input {
+      outline: none;
+    }
+    input[type=search] {
+      -webkit-appearance: textfield;
+      -webkit-box-sizing: content-box;
+      font-family: inherit;
+      font-size: 100%;
+    }
+    input::-webkit-search-decoration,
+    input::-webkit-search-cancel-button {
+      display: none; 
+    }
+    
+    
+    input[type=search] {
+      background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+      border: solid 1px #ccc;
+      padding: 9px 10px 9px 32px;
+      width: 55px;
+      
+      -webkit-border-radius: 10em;
+      -moz-border-radius: 10em;
+      border-radius: 10em;
+      
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s;
+    }
+    input[type=search]:focus {
+      width: 130px;
+      background-color: #fff;
+      border-color: #66CC75;
+      
+      -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+      -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+      box-shadow: 0 0 5px rgba(109,207,246,.5);
+    }
+    
+    
+    input:-moz-placeholder {
+      color: #999;
+    }
+    input::-webkit-input-placeholder {
+      color: #999;
+    }
+    
+    /* Demo 2 */
+    #demo-2 input[type=search] {
+      width: 15px;
+      padding-left: 10px;
+      color: transparent;
+      cursor: pointer;
+    }
+    #demo-2 input[type=search]:hover {
+      background-color: #fff;
+    }
+    #demo-2 input[type=search]:focus {
+      width: 130px;
+      padding-left: 32px;
+      color: #000;
+      background-color: #fff;
+      cursor: auto;
+    }
+    #demo-2 input:-moz-placeholder {
+      color: transparent;
+    }
+    #demo-2 input::-webkit-input-placeholder {
+      color: transparent;
+    }
+    .vl {
+        border-left: 1px solid  grey;
+        height: 90px;
+        position:relative;
+        right: 200px;
+    }
+    .vl2 {
+        border-left: 1px solid grey;
+        height: 90px;
+        position:relative;
+        left: 10%;
+    }
+    </style>
