@@ -30,13 +30,14 @@ def create_profile_view(request):
 #views to create posts
 def create_post_view(request):
     current_user = request.user
-    post = Post.objects.all()
+    post = Post.objects.filter(neighbourhood=request.user.neighbourhood.all())
     if request.method == 'POST':
         post_form = PostForm(request.POST, request.FILES) 
         if post_form.is_valid():
             post = post_form.save(commit=False)
             post.user = current_user
             post.profile = current_user.profile
+            neighbourhood = current_user.neighbourhood
             post.save()
         return redirect('display')
     else:        
@@ -51,7 +52,7 @@ def display(request):
 #views to create business
 def create_buisiness_view(request):
     current_user = request.user
-    post = Post.objects.all()
+    business = Business.objects.filter(neighbourhood_id=id)
     if request.method == 'POST':
         business_form = BusinessForm(request.POST, request.FILES) 
         if business_form.is_valid():
@@ -61,8 +62,8 @@ def create_buisiness_view(request):
             business.save()
         return redirect('business')
     else:      
-        business_form =PostForm() 
-    return render(request,'bzna.html',{"business_form":business_form})
+        business_form = BusinessForm() 
+    return render(request,'bzna.html',locals())
 
 #views to display business
 def business(request):

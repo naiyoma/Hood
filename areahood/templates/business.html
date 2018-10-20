@@ -13,11 +13,9 @@
 <body>
 
         {% for item in business %}
-            <img class="img-responsive" src="{{item.product.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>
-            <p>neighbourhood:{{item.business.neighbourhood}}</p>
-                       <p>Location:{{item.business.post}}</p>
-                       <p>Username:{{item.user.business.username}}</p>
-                    
+            <img class="img-responsive" src="{{item.product.url}}" alt="Image" id="img{{item.product.id}}" alt="Image"style="height:300px; width: 410px;"></a>
+                       <p>{{item.business_name}}</p>
+                       <p>{{item.business_email}}</p>
         {% endfor %}
 </body>
 {% endblock %}

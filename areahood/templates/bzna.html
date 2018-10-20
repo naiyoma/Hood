@@ -14,7 +14,7 @@ naini
 {% endblock %}
 </head>
 <div class="well" style="width: 50%;position: relative;left: 20%;margin-top: 100px;">
-<form  action="{%url 'post'%}" method="post" enctype="multipart/form-data">
+<form  action="{%url 'bzna'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
     {% bootstrap_form business_form %}
     <input type="submit" class="btn btn-outline-success btn-sm" value="Post">

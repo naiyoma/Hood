@@ -24,7 +24,8 @@ class Neighbourhood(models.Model):
     neighbourhood_name=models.CharField(max_length = 60)
     neighbourhood_location = models.CharField(max_length = 90) 
     occupants_count=models.CharField(max_length = 70)
-    # admin = models.ForeignKey(User)
+    user = models.ForeignKey(User,related_name='neighbourhood',null=True)
+    
     
     class Meta:
         ordering = ['-id']
@@ -91,7 +92,8 @@ class Profile(models.Model):
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to = 'images/',null=True)  
+    image = models.ImageField(upload_to = 'images/',null=True)
+    neighbourhood = models.ForeignKey(Neighbourhood,related_name='post',null=True)    
     post = models.CharField(max_length = 30)
     post_description = models.CharField(max_length = 40,blank=True)
     profile = models.ForeignKey(Profile,null=True)
