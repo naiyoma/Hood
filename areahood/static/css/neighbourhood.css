@@ -73,88 +73,43 @@ body {
   }
   #row2{
     background-image: url("https://png.pngtree.com/element_origin_min_pic/16/06/15/165761150d11e20.jpg");
-    height: 500px;
+    height: 270px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
   }
-  .quote {
-	width: fit-content;
-	padding: 1rem;
-	background-color: transparentize(#000, .98);
+  blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    position: relative;
+    left: 23%;
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote:after {
+    color: darkgray;
+    content:close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+ 
+  blockquote p {
+    display: inline;
+    font-family: fantasy;
+    font-style: italic;
+    font-weight: 600;
+    font-variant: small-caps;
+    font-stretch: ultra-expanded;
+    font-size: 24px;
 
-	&__body {
-		z-index: 1;
-		position: relative;
-		margin: 0;
-		padding: .75rem 2.75rem;
-		font-family: Georgia, serif;
-		font-size: 1.125rem;
-		font-style: italic;
-
-		&::before,
-		&::after {
-			z-index: -1;
-			position: absolute;
-			color: hsl(0,0,82.5%);
-			font-size: 4rem;
-			font-style: normal; 
-			font-weight: 700;
-		}
-		&::before {
-			content: "“";
-			top: 0;
-			left: 0;
-			line-height: 1;
-		}
-		&::after {
-			content: "”";
-			bottom: 0;
-			right: 0;
-			line-height: 0;
-		}
-	}
-    &__credits {
-        margin-left: 2.75rem;
-		padding-right: 2.75rem;
-		color: hsl(0,0,55%);
-		font-size: .8125rem; // 13px
-    }
-}
-
-//  ==========================================================
-//  BASE @rules
-//  ==========================================================
-html {
-	font-family: helvetica, arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased; // always
-    box-sizing: border-box;
-}
-*,
-*:after,
-*:before {
-    box-sizing: inherit;
-}
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-img {
-	display: block;
-	width: 100%;
-	height: auto;
-	border: 0;
-}
-p {
-	margin: 0;
-}
+  }
