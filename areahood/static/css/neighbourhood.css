@@ -73,7 +73,7 @@ body {
   }
   #row2{
     background-image: url("https://png.pngtree.com/element_origin_min_pic/16/06/15/165761150d11e20.jpg");
-    height: 270px;
+    height: 230px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -123,7 +123,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:#999;
+    background-color:#E5CCFF;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -164,34 +164,5 @@ body {
     position: relative;
     right: 10%;
     top: 20px;
+    font-size: 25px;
 } 
-
-.progress{
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 2px;
-    color: azure;
-    height: 20px;
-    position: relative;
-    right: 24%;
-    top: 20px;
-  }
-#progress{
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 2px;
-    color: azure;
-    height: 20px;
-    position: relative;
-    right: 42px;
-    top: 18px;
-  } 
-  

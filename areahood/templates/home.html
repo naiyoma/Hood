@@ -21,9 +21,9 @@
               <hr>
               <a href='/'>Home</a>
               <hr>
-              <a href='/about'>About Us</a>
+              <a href='/business'>View Businesses</a>
               <hr>
-              <a href='profile/'>View Profile</a>
+              <a href='/bzna'>Create Business</a>
               <hr>
               <a href="#">Confrence</a>
               <p style="color:grey;">New york/15-16 November 2018</p>
@@ -39,10 +39,10 @@
                         <h1 class="neon green"id="blink-soft">Neighbourhood</h1>
                 </main>
                 <hr id="progress">
-                <h4 id="text1">Login</h4>
+                <a href="accounts/login" id="text1">Login</a>
                 <p>......</p>
-                <h4 id="text1">Register</h4>
-                <hr class="progress">    
+                <a  href="accounts/register" id="text1">Register</a>
+                   
         </div>
         <div class="row" id="row2">
                 <blockquote>
@@ -51,6 +51,15 @@
                 halves of a scissor coming together cutting reputations and good names to shred <br></p>
                 <p style="text-align: center;">By:Aurelia Naiyoma</p>
                 </blockquote>
+        </div>
+        <div class="row" id="row3">
+                <div class="col-md-6">
+                        ppppp
+                </div>
+                <div class="col-md-6">
+                        pppp
+                </div>
+               
         </div>
         {% for item in photos %}
             <img class="img-responsive" src="{{item.image.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>
