@@ -177,15 +177,24 @@ body {
     background-size: cover;
     position: relative;
 }
-#rules{
-
+#text5{
+position: relative;
+left: 30%;
+top: 20px;
 }
 #text4{
     display: inline;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
     font-weight: 600;
     font-variant: small-caps;
     font-stretch: ultra-expanded;
-    font-size: 24px;
+    font-size: 15px;
+    position: relative;
+    left: 30%;
+    top:27px;
+}
+#col3{
+    height: 350px;
+    background-color: #ccc;
 }
