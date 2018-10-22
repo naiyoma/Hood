@@ -1,0 +1,33 @@
+{%extends 'registration/base.html'%}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% if profiles.profile_image  %}
+        <img src="{{profiles.profile_image.url}}" class="img-responsive" alt="Card image cap" height="300px"class="w3-hover-opacity" >
+        <h4 style="color:brown; text-align: center;">Below are some of the projects that i have Posted</h4>
+      {% else %}
+      <h2>0</h2>
+      {% endif %}
+{% for photos_item in profiles.project_set.all %}
+
+<div class="container">
+<div style="text-align:center;" class="row" id="profilerow">
+    <div class="col-md-6">
+        <div id="imagecard">
+    <img float="center" class="" src="{{photos_item.image.url}}" alt="Card image cap" style="width: 530px; top: 150px;">
+    <div class="card-body">
+    <p>Project Title:</p>
+    <p>Project Description:{{ photos_item.image_caption | truncatechars:100 }}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+        
+        
+    </div>
+
+</div>
+{% endblock %}
