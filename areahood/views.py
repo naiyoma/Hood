@@ -7,7 +7,7 @@ import datetime as dt
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
 
-@login_required(login_url='/account/login/')    
+@login_required(login_url='/accounts/login/')    
 def display(request):
     images = Profile.objects.all() 
     try:
