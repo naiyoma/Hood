@@ -5,8 +5,9 @@ from .forms import ProfileForm,PostForm,BusinessForm,CommunityForm
 from django.http import HttpResponse
 import datetime as dt
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required
 
-    
+@login_required(login_url='/account/login/')    
 def display(request):
     images = Profile.objects.all() 
     try:
