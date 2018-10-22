@@ -65,7 +65,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile',null=True)
     profile_image = models.ImageField(upload_to = 'images/')
     email = models.EmailField(max_length=70,blank=True)
-    neighbourhood = models.ForeignKey(Neighbourhood, default=3)
+    neighbourhood = models.ForeignKey(Neighbourhood,null=True)
     location = models.ForeignKey(Location,null=True)
     
     def __str__(self):
@@ -78,6 +78,9 @@ class Profile(models.Model):
         self.save()
 
     def update_description(self):
+        self.save()
+
+    def create_profile(self):
         self.save()
 
     @classmethod
@@ -116,6 +119,7 @@ class Post(models.Model):
     def update_caption(self):
         self.save()
 
+
     def average_rating(self):
         all_ratings =list(map(lambda x: x.rating, self.review_set.all()))
         return np.mean(all_ratings)
@@ -123,7 +127,9 @@ class Post(models.Model):
     def __unicode__(self):
         return self.image_name
 
-    
+    def create_post(self):
+        self.save()
+
 class Business(models.Model):  
     business_name = models.CharField(max_length = 130)
     business_email = models.EmailField(max_length=70,blank=True)
