@@ -1,1 +1,1 @@
-web: gunicorn Award.wsgi
+web: gunicorn neighbourhood.wsgi
