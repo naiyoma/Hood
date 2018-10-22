@@ -2,10 +2,7 @@ h1{
     color: rgb(247, 166, 62);
 }
 
-#card1{
-      
-      height: 50%;
-}
+
 #row1{
     background-image: url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?ixlib=rb-0.3.5&s=2bdb09385e223b27295f922b64d406b2&auto=format&fit=crop&w=1050&q=80");
     height: 500px;
@@ -293,4 +290,11 @@ top: 20px;
 }
 #column2{
     background-image: url("")
+}
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+body {
+	background: #DDD;
+	font-size: 15px;
 }

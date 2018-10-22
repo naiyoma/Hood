@@ -17,15 +17,16 @@ import datetime as dt
 #profile views
 def display(request):
     images = Profile.objects.all() 
-    neighbourhood_id = get_object_or_404(Neighbourhood,pk=request.user.profile.neighbourhood.id)
-    print('hhhhhhhhhhhhhhhhhhhhhh')
-    print(neighbourhood_id)
-    photo = Neighbourhood.objects.get(pk=request.user.profile.location.id)
-    photos = Post.objects.filter(neighbourhood=photo)
-    post = Neighbourhood.objects.get(pk=request.user.profile.neighbourhood.id)
-    posts = Post.objects.filter(neighbourhood=post)
-    print(photos)
-    return render (request,'home.html',{"photos":photos,"images":images,"posts":posts})
+    try:
+        neighbourhood_id = get_object_or_404(Neighbourhood,pk=request.user.profile.neighbourhood.id)
+
+        photo = Neighbourhood.objects.get(pk=request.user.profile.location.id)
+        photos = Post.objects.filter(neighbourhood=photo)
+        post = Neighbourhood.objects.get(pk=request.user.profile.neighbourhood.id)
+        posts = Post.objects.filter(neighbourhood=post)
+    except:
+        message='create neughbourhood, uko locationless'
+    return render (request,'home.html',locals())
 
 def create_profile_view(request):
     current_user = request.user
@@ -94,15 +95,14 @@ def create_community(request, user_id=None):
    else:
        form = CommunityForm()
    return render(request, 'community.html', {"form":form})
-
 #searching for businesses
 def search_results(request):
-    if 'username' in request.GET and request.GET['username']:
-        search_term = request.GET.get('username')
-        search_profiles = Profile.objects.get(username=search_term)
+    if 'business_name' in request.GET and request.GET['business_name']:
+        search_term = request.GET.get('business_name')
+        search_businesses = Business.search_by_business_name(search_term)
         message = f"{search_term}"
-        print(search_profiles)
-        return render(request, 'profile/search.html',{"message":message,"profiles":search_profiles})
+        print(search_businesses)
+        return render(request, 'profile/search.html',{"message":message,"biznes":search_businesses})
     else:
         message = "you havent seached for any term"
     return render(request, 'profile/search.html',{"message":message})    

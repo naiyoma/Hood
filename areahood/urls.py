@@ -10,8 +10,8 @@ urlpatterns=[
     url(r'^post/$', views.create_post_view, name='post'),
     url(r'^bzna/$', views.create_buisiness_view, name='bzna'),
     url(r'^business/$', views.business, name='business'),
-    url(r'^add/$', views.create_community, name='community'),    
+    url(r'^add/$', views.create_community, name='community'),
+    url(r'^search/',views.search_results, name='search_results'),    
 ]
-
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

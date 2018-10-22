@@ -1,33 +1,29 @@
 {%extends 'registration/base.html'%}
+{% load bootstrap4 %}
 {% block content %}
-
 <div class="container">
-    <div class="row">
-        {% if profiles.profile_image  %}
-        <img src="{{profiles.profile_image.url}}" class="img-responsive" alt="Card image cap" height="300px"class="w3-hover-opacity" >
-        <h4 style="color:brown; text-align: center;">Below are some of the projects that i have Posted</h4>
-      {% else %}
-      <h2>0</h2>
-      {% endif %}
-{% for photos_item in profiles.project_set.all %}
-
-<div class="container">
-<div style="text-align:center;" class="row" id="profilerow">
-    <div class="col-md-6">
-        <div id="imagecard">
-    <img float="center" class="" src="{{photos_item.image.url}}" alt="Card image cap" style="width: 530px; top: 150px;">
-    <div class="card-body">
-    <p>Project Title:</p>
-    <p>Project Description:{{ photos_item.image_caption | truncatechars:100 }}</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-{% endfor %}
-        
-        
-    </div>
-
+   <div class="row">
+        <h1><a href='/'>Go Home</a></h1>
+       {% if biznes%}
+       <h2>We Found {{ biznes|length }} business with this name</h2>
+       {% else %}
+       <h2> Found 0 projects for the search term {{message}}</h2>
+       {% endif %}
+   </div>
+   <div class="row">
+       {% if biznes %}
+       {% for business in biznes %}
+       <div class="col-md-4">
+           <div class="card" style="margin-bottom:1vh;">
+               <img class="card-img-top" src="{{business.product.url}}" alt="Card image cap">
+               <div class="card-body">
+                   <h5 class="card-title">Business Name:{{business.business_name}}</h5>
+                   <p class="card-text">Business Email:{{business.business_email}}</p>
+               </div>
+           </div>
+       </div>
+       {% endfor %}
+       {% endif %}
+   </div>
 </div>
 {% endblock %}

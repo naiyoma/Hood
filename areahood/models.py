@@ -65,7 +65,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile',null=True)
     profile_image = models.ImageField(upload_to = 'images/')
     email = models.EmailField(max_length=70,blank=True)
-    neighbourhood = models.ForeignKey(Neighbourhood,null=True, default=3)
+    neighbourhood = models.ForeignKey(Neighbourhood, default=3)
     location = models.ForeignKey(Location,null=True)
     
     def __str__(self):
@@ -155,10 +155,11 @@ class Business(models.Model):
     def find_business(cls,business_id):
         business = cls.objects.get(id=business_id)
         return business                   
-@classmethod
-    def search_by_username(cls,search_term):
-        profiles = cls.objects.filter(username__icontains=search_term)
-        return profiles
+    
+    @classmethod
+    def search_by_business_name(cls,search_term):
+        businesses = cls.objects.filter(business_name__icontains=search_term)
+        return businesses
 
 
    
