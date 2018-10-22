@@ -8,7 +8,6 @@
     crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
-
 <body>
     <div class="row" id="row1">
         <div id="mySidenav" class="sidenav">
@@ -39,7 +38,8 @@
             <h1 class="neon green" id="blink-soft">Neighbourhood...</h1>
         </main>
         <hr id="progress">
-        <a href="logout/" id="text1">Logout</a>
+        <a href="{% url 'logout' %}" id="text1">Logout</a>
+        <p>.....</p>
         <a href="accounts/login" id="text1">Login</a>
         <p>......</p>
         <a href="accounts/register" id="text1">Register</a>
