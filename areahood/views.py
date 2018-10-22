@@ -78,8 +78,8 @@ def business(request):
     images = Profile.objects.all() 
     business = Business.objects.all() 
     return render (request,'business.html',{"business":business,"images":images}) 
-#views for creating for creating community
 
+#views for creating for creating neighbourhood
 def create_community(request, user_id=None):
    current_user = request.user
    ordering=['-date_posted']
@@ -94,3 +94,15 @@ def create_community(request, user_id=None):
    else:
        form = CommunityForm()
    return render(request, 'community.html', {"form":form})
+
+#searching for businesses
+def search_results(request):
+    if 'username' in request.GET and request.GET['username']:
+        search_term = request.GET.get('username')
+        search_profiles = Profile.objects.get(username=search_term)
+        message = f"{search_term}"
+        print(search_profiles)
+        return render(request, 'profile/search.html',{"message":message,"profiles":search_profiles})
+    else:
+        message = "you havent seached for any term"
+    return render(request, 'profile/search.html',{"message":message})    

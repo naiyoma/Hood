@@ -155,7 +155,10 @@ class Business(models.Model):
     def find_business(cls,business_id):
         business = cls.objects.get(id=business_id)
         return business                   
-
+@classmethod
+    def search_by_username(cls,search_term):
+        profiles = cls.objects.filter(username__icontains=search_term)
+        return profiles
 
 
    
