@@ -1,99 +1,94 @@
-{%extends 'registration/base.html'%}
-{% load bootstrap4 %} 
-{% load staticfiles %}
-{% block content %} 
-{{block.super}}
+{%extends 'registration/base.html'%} {% load bootstrap4 %} {% load staticfiles %} {% block content %} {{block.super}}
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<body>
-        <div class="row" id="row1">
+    crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
 
-    <div id="mySidenav" class="sidenav">
-                English
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <hr>
-              <a href="/accounts/login">Login</a>
-              <hr>
-              <a href='/'>Home</a>
-              <hr>
-              <a href='/business'>View Businesses</a>
-              <hr>
-              <a href='/bzna'>Create Business</a>
-              <hr>
-              <a href="#">Confrence</a>
-              <p style="color:grey;">New york/15-16 November 2018</p>
-              <p style="color: #818181;">Amsterdam / 14-15 February 2019</p>
-            </div>
-            <div id="main">
-              <span style="font-size:20px;cursor:pointer;color:white;" onclick="openNav()">&#9776; menu</span>
-            </div>
-                <hr style="background-color:white;">
-                <main>
-                        <h1 class="neon pink" id="blink-soft" >Welcome</h1>
-                        <h1 class="neon blue"id="blink-soft">To</h1>
-                        <h1 class="neon green"id="blink-soft">Neighbourhood</h1>
-                </main>
-                <hr id="progress">
-                <a href="accounts/login" id="text1">Login</a>
-                <p>......</p>
-                <a  href="accounts/register" id="text1">Register</a>
-                   
+<body>
+    <div class="row" id="row1">
+
+        <div id="mySidenav" class="sidenav">
+            English
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <hr>
+            <a href="/accounts/login">Login</a>
+            <hr>
+            <a href='/'>Home</a>
+            <hr>
+            <a href='/business'>View Businesses</a>
+            <hr>
+            <a href='/bzna'>Create Business</a>
+            <hr>
+            <a href="#">Confrence</a>
+            <p style="color:grey;">New york/15-16 November 2018</p>
+            <p style="color: #818181;">Amsterdam / 14-15 February 2019</p>
         </div>
-        <div class="row" id="row2">
-                <blockquote>
-                <p>The neighbourhood is a place  of.. intrigue and emotional espionage,<br>
-                where when two people stop to talk on the street their tongues are like the two<br>
-                halves of a scissor coming together cutting reputations and good names to shred <br></p>
-                <p style="text-align: center;">By:Aurelia Naiyoma</p>
-                </blockquote>
+        <div id="main">
+            <span style="font-size:20px;cursor:pointer;color:white;" onclick="openNav()">&#9776; menu</span>
         </div>
-        <div class="row" id="row3">
-                <div class="col-md-6" id="col3">
-                 <h4 id="text5">Neighbourhood Rules</h4>  
-                <p id="text4">      
-                Lorem Ipsum is simply dummy text of the printing.<br>
-                Lorem Ipsum has been the industry's standard dummy<br>
-                when an unknown printer took a galley of type and <br>
-                It has survived not only five centuries, but also <br>.
-                remaining essentially unchanged. <br>
-                sheets containing Lorem Ipsum passages<br>
-                PageMaker including versions of Lorem Ipsum.<br>
-                </p>
+        <hr style="background-color:white;">
+        <main>
+            <h1 class="neon pink" id="blink-soft">Welcome</h1>
+            <h1 class="neon blue" id="blink-soft">To</h1>
+            <h1 class="neon green" id="blink-soft">Neighbourhood...</h1>
+        </main>
+        <hr id="progress">
+        <a href="accounts/login" id="text1">Login</a>
+        <p>......</p>
+        <a href="accounts/register" id="text1">Register</a>
+    </div>
+    <div class="row" id="row2">
+        <blockquote>
+            <p>The neighbourhood is a place of.. intrigue and emotional espionage,<br> where when two people stop to talk
+                on the street their tongues are like the two<br> halves of a scissor coming together cutting reputations
+                and good names to shred... <br></p>
+            <p style="text-align: center;">By:Aurelia Naiyoma</p>
+        </blockquote>
+    </div>
+    <br>
+    <button type="button" class="btn btn-outline-secondary" style="position: relative;left: 60%;width: 150px;bottom: 10px;">MAKE A POST</button>
+    <h4 style="float:left; font-family: 'Poiret One', cursive;color: #330033;"> View Neighbourhood<strong></strong>Post</h4>
+        <div class="container-fluid row">
+            
+            {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card">
+                <div class="hovereffect" style="background-color:#ffffff">
+        <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" style="height:400px;">
+                        <br><br>
+                    <div>
+                        <div class="card-body">
+                        <h5 style="float:left; font-family: 'Poiret One', cursive;color: #330033;">neighbourhood:{{post.neighbourhood}}</h5>
+                        <br/>
+                        <h6 style="float:left; font-family: 'Poiret One', cursive;position: relative;right: 50%;color: #330033">Username:{{post.profile.username}}</h6>
+                    </div>
+                    </div>
+                    <div class="overlay">
+                        <a class="info" href="#" style="-moz-border-radius:28px;-webkit-border-radius:28px; border-radius:28px; float:right">Join Us</a>
+                        <a class="info" href="#" style="-moz-border-radius:28px;-webkit-border-radius:28px; border-radius:28px; float:right"><img
+                                src="/static/images/icons8-heart-outline-25 (2).png"></a>
+                    </div>
                 </div>
-                <div class="col-md-6" id="col2">
-                 <p>image</p>
-                </div>
-               
+            </div>
+            </div>
+            {% endfor %}
         </div>
-        {% for item in photos %}
-            <img class="img-responsive" src="{{item.image.url}}" alt="Image" id="img{{item.image.id}}" alt="Image"style="height:300px; width: 410px;"></a>
-   
-                    {% if item.profile.profile_image %}
-                       <img src="{{item.profile.profile_image.url}}" alt="" style="width: 60px; height: 60px; border-radius:70%;possition:relative;float:left;">
-                       <p>neighbourhood:{{item.profile.neighbourhood}}</p>
-                       <p>Location:{{item.profile.location}}</p>
-                       <p>Username:{{item.user.profile.username}}</p>
-                       {% endif %} 
-        {% endfor %}
-</body>
-<script>
-                function openNav() {
-                    document.getElementById("mySidenav").style.width = "250px";
-                    document.getElementById("main").style.marginLeft = "250px";
-                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-                }
-                
-                function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                    document.getElementById("main").style.marginLeft= "0";
-                    document.body.style.backgroundColor = "white";
-                }
-                </script>
-                
-{% endblock %}
+    </body>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script> {% endblock %}

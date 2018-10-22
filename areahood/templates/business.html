@@ -10,12 +10,34 @@
         crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
-<body>
-
-        {% for item in business %}
-            <img class="img-responsive" src="{{item.product.url}}" alt="Image" id="img{{item.product.id}}" alt="Image"style="height:300px; width: 410px;"></a>
-                       <p>{{item.business_name}}</p>
-                       <p>{{item.business_email}}</p>
-        {% endfor %}
 </body>
+<div class="row">
+        <h1 style="color: #330033;position: relative; left: 5%;"> Welcome to your NeighbourHood Busines Pitches</h1>
+</div>
+<br>
+<br>
+ <div class="container-fluid row">
+                        {% for item in business %}
+                        <div class="col-md-4">
+                            <div class="card">
+                            <div class="hovereffect" style="background-color:#ffffff">
+                    <img class="card-img-top" src="{{item.product.url}}" alt="Card image cap" style="height:400px;">
+                                    <br><br>
+                                <div>
+                                    <div class="card-body">
+                                    <h5 style="float:left; font-family: 'Poiret One', cursive;color: #330033;">Business-Name:{{item.business_name}}</h5>
+                                    <br/>
+                                    <h6 style="float:left; font-family: 'Poiret One', cursive;position: relative;right: 50%;color: #330033">Email:{{item.business_email}}</h6>
+                                </div>
+                                </div>
+                                <div class="overlay">
+                                    <a class="info" href="#" style="-moz-border-radius:28px;-webkit-border-radius:28px; border-radius:28px; float:right">Join Us</a>
+                                    <a class="info" href="#" style="-moz-border-radius:28px;-webkit-border-radius:28px; border-radius:28px; float:right"><img
+                                            src="/static/images/icons8-heart-outline-25 (2).png"></a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        {% endfor %}
+                    </div>
 {% endblock %}
